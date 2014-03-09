@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <link rel="stylesheet" type="text/css" href="page-style.css" />
+   <title>OpenGOO Game Official Site</title>
+   
+   <!-- Let it snow script -->
+   <!--<script type="text/javascript" src="./Scripts/snowstorm.js"></script>-->
+   
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <meta http-equiv="content-language" content="EN">
+   <meta name="title" content="OpenGOO Game Official Site">
+   <meta name="description" content="OpenGOO, a free and open clone of World of Goo">
+   <meta name="keywords" content="Open Goo,Open goo,OpenGOO,OpenGoo,Opengoo,WorldOfGoo,World of Goo,GOO">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <meta name="creation_Date" content="09/24/2012">
+   <meta name="revisit-after" content="15 days">
+
+<script type="text/javascript">
+
+/* The function gets all the elements from a class name in the document */
+function getElementsByClass(searchClass, domNode, tagName) { 
+	if (domNode == null) domNode = document;
+	if (tagName == null) tagName = '*';
+	var el = new Array();
+	var tags = domNode.getElementsByTagName(tagName);
+	var tcl = " "+searchClass+" ";
+	for(i=0,j=0; i<tags.length; i++) { 
+		var test = " " + tags[i].className + " ";
+		if (test.indexOf(tcl) != -1) 
+			el[j++] = tags[i];
+	} 
+	return el;
+}
+
+/* The function colors the links when they are clicked and visited in the iframe */
+function activeLink(id) {
+
+
+  var objs = getElementsByClass("link");
+  
+  for(var i=0; i<objs.length; i++) {
+    objs[i].style.color='';
+  }
+  
+  switch(id) {
+  
+    case 'homeL':
+      document.getElementById(id).style.color="#ffcd00";
+    break;
+    
+    case 'newsL':
+      document.getElementById(id).style.color="#abc837";
+    break;
+    
+    case 'galleryL':
+      document.getElementById(id).style.color="#00aad4";
+    break;
+    
+    case 'downloadL':
+      document.getElementById(id).style.color="#2ca089";
+    break;
+    
+    case 'authorsL':
+      document.getElementById(id).style.color="#ab37c8";
+    break;
+  
+  } 
+  
+}
+
+/* The function fits the iframe size according to the page height */
+/* In some browsers the height is not shrunk back with smaller pages */
+function resizeFrame(id) {
+
+    var newheight;
+
+    if(document.getElementById){
+        newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
+    }
+
+    document.getElementById(id).height= (newheight) + "px";
+}
+
+</script>
+
+<!-- Let it snow! Properties-->
+<!--
+<script>
+  snowStorm.autoStart = true;
+  snowStorm.snowColor = '#99ccff'; // blue-ish snow!?
+  snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
+  snowStorm.snowStick = true;
+</script> -->
+
+</head>
+
+<body onload="activeLink('homeL')">
+
+<!--
+<div class="social">
+  <a href="http://www.facebook.com/OpenGoo" target="__blank">
+  <img border="0" width="35" src="./images/Facebook_icon_hd.png"/></a>
+    
+  <a href="https://plus.google.com/116142039249930637097/posts" target="__blank">
+  <img border="0" width="35" src="./images/google+_icon.png"/></a>
+    
+  <a href="https://twitter.com/#!/Opengoo_dev" target="__blank">
+  <img border="0" width="36" src="./images/twitter_icon.png"/></a>  
+</div> -->
+
+<div class="description">
+  <h1> OpenGOO </h1> A free and open clone of World Of Goo. <!-- <br><i>Dedicated to Aurélie.</i> -->
+</div>
+
+<div class="menu">
+<ul>
+  <li><a id="homeL" class="link" target="frame" href="home.html" onclick="activeLink('homeL')" >Home</a></li>
+  <li><a id="newsL" class="link" target="frame" href="news.html" onclick="activeLink('newsL')" >News</a></li>
+  <li><a id="wikiL" class="link" href="https://github.com/Mandarancio/OpenGOO/wiki" target="_blank">Wiki</a></li>
+  <li><a id="galleryL" class="link" target="frame" href="gallery.html" onclick="activeLink('galleryL')" >Gallery</a></li>
+  <li><a id="downloadL" class="link" target="frame" href="download.html" onclick="activeLink('downloadL')" >Download</a></li>
+  <li><a id="gitL" class="link" href="https://github.com/Mandarancio/OpenGOO" target="_blank">GitHub</a></li>
+  <li><a id="authorsL" class="link" target="frame" href="authors.html" onclick="activeLink('authorsL')" >Authors</a></li>
+</ul>
+</div>
+
+<!-- ShinyStat code ->
+<div class="counter" align="center">
+
+<script type="text/javascript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=OpenGOO"></script>
+<noscript>
+
+<a href="http://www.shinystat.com/it" target="_top">
+<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=OpenGOO" alt="Counter" border="0" /></a>
+</noscript>
+
+</div>
+<!-- End ShinyStat code -->
+
+<div class="verticalLine">
+<img src="./images/separator.png"/> 
+</div>
+
+<!--Opera doesn't support overflow property in css -->
+<iframe id="frame" name="frame" src="home.html" scrolling="no" onload="resizeFrame('frame');"></iframe>
+
+</body>
+
+</html> 
